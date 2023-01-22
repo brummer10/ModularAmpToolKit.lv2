@@ -1,0 +1,28 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<urn:brummer:poweramps>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-poweramps.html> ;
+        modgui:stylesheet <modgui/stylesheet-poweramps.css> ;
+        modgui:screenshot <modgui/screenshot-poweramps.png> ;
+        modgui:thumbnail <modgui/thumbnail-poweramps.png> ;
+        modgui:brand "brummer" ;
+        modgui:label "PowerAmps" ;
+        modgui:model "head-model-001" ;
+        modgui:panel "0550" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "SelectModel" ;
+            lv2:name "SelectModel" ;
+        ] , [
+            lv2:index 1 ;
+            lv2:symbol "GAIN" ;
+            lv2:name "Input" ;
+        ] , [
+            lv2:index 2 ;
+            lv2:symbol "VOLUME" ;
+            lv2:name "Output" ;
+        ] ;
+    ] .

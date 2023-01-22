@@ -1,0 +1,27 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<urn:brummer:PreAmps>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-preamps.html> ;
+        modgui:stylesheet <modgui/stylesheet-preamps.css> ;
+        modgui:screenshot <modgui/screenshot-preamps.png> ;
+        modgui:thumbnail <modgui/thumbnail-preamps.png> ;
+        modgui:brand "brummer" ;
+        modgui:label "PreAmps" ;
+        modgui:model "pre-amps" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "AMPSELECT" ;
+            lv2:name "ampselect" ;
+        ] , [
+            lv2:index 1 ;
+            lv2:symbol "GAIN" ;
+            lv2:name "gain" ;
+        ] , [
+            lv2:index 2 ;
+            lv2:symbol "VOLUME" ;
+            lv2:name "volume" ;
+        ] ;
+    ] .
