@@ -21,7 +21,7 @@ Select the valve type to use in the Power Amp section and adjust the input/outpu
 
 - PowerAmpImpulses
 
-Select the POwer Amp type to use and adjust the input/output controls for the module.
+Select the Power Amp type to use and adjust the input/output controls for the module.
 
 
 ## Dependencys
