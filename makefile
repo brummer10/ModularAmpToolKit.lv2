@@ -3,7 +3,7 @@ BLUE = "\033[1;34m"
 RED =  "\033[1;31m"
 NONE = "\033[0m"
 
-SUBDIR := PreAmps PreAmpImpulses PowerAmps
+SUBDIR := PreAmps PreAmpImpulses PowerAmps PowerAmpImpulses
 
 NOGOAL := mod install all
 
