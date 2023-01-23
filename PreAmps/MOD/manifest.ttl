@@ -4,4 +4,5 @@
 <urn:brummer:PreAmps>
     a lv2:Plugin ;
     lv2:binary <PreAmps.so> ;
-    rdfs:seeAlso <PreAmps.ttl> .
+    rdfs:seeAlso <PreAmps.ttl> ;
+    rdfs:seeAlso <modgui.ttl> .
