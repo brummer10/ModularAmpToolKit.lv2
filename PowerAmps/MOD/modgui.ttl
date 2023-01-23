@@ -9,9 +9,8 @@
         modgui:screenshot <modgui/screenshot-poweramps.png> ;
         modgui:thumbnail <modgui/thumbnail-poweramps.png> ;
         modgui:brand "brummer" ;
-        modgui:label "PowerAmps" ;
-        modgui:model "head-model-001" ;
-        modgui:panel "0550" ;
+        modgui:label "PowerAmpTubes" ;
+        modgui:model "power_amps" ;
         modgui:port [
             lv2:index 0 ;
             lv2:symbol "SelectModel" ;

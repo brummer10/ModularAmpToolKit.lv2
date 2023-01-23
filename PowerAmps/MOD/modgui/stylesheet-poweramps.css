@@ -1,50 +1,27 @@
 /* SKINS */
-.mod-head-model-001{{{cns}}} {
+.power_amps{{{cns}}} {
     border-radius: 20px;
 }
-.mod-head-model-001-0550{{{cns}}} {
-    background-image: url(/resources/heads/model-001/model-0550.png{{{ns}}});
+.power_amps{{{cns}}} {
+    background-image: url(/resources/heads/head.webp{{{ns}}});
     background-position: center center;
     background-repeat: no-repeat;
     font-family: Helvetica,Arial,Sans-serif;
-    height: 259px;
+    height: 146px;
     position: relative;
     width: 550px;
 }
 
-.mod-head-model-001-0700{{{cns}}} {
-    background-image: url(/resources/heads/model-001/model-0700.png{{{ns}}});
-    background-position: center center;
-    background-repeat: no-repeat;
-    font-family: Helvetica,Arial,Sans-serif;
-    height: 260px;
-    position: relative;
-    width: 700px;
-    border-radius: 18px;
+.power_amps{{{cns}}} .mod-pedal-input {
+    top: 46px;
 }
 
-.mod-head-model-001-0800{{{cns}}} {
-    background-image: url(/resources/heads/model-001/model-0800.png{{{ns}}});
-    background-position: center center;
-    background-repeat: no-repeat;
-    font-family: Helvetica,Arial,Sans-serif;
-    height: 260px;
-    position: relative;
-    width: 800px;
-}
-
-.mod-head-model-001-0950{{{cns}}} {
-    background-image: url(/resources/heads/model-001/model-0950.png{{{ns}}});
-    background-position: center center;
-    background-repeat: no-repeat;
-    font-family: Helvetica,Arial,Sans-serif;
-    height: 260px;
-    position: relative;
-    width: 950px;
+.power_amps{{{cns}}} .mod-pedal-output {
+    top: 46px;
 }
 
 /* THE AUTHOR */
-.mod-head-model-001{{{cns}}} .mod-plugin-brand h1 {
+.power_amps{{{cns}}} .mod-plugin-brand h1 {
     bottom: 90px;
     color: #fff;
     font-size: 14px;
@@ -55,18 +32,19 @@
 }
 
 /* PLUGIN'S NAME */
-.mod-head-model-001{{{cns}}} .mod-plugin-name h1 {
-    bottom: 60px;
-    color: #fff;
+.power_amps{{{cns}}} .mod-plugin-name h1 {
+    top: 6px;
+    color: #444;
     font-size: 18px;
-    left: 54px;
+    left: 370px;
     line-height: 1;
     margin: 0;
     position: absolute;
+    text-shadow:0 1px 0 #888;
 }
 
 /* CONTROLS */
-.mod-head-model-001{{{cns}}} .mod-control-group {
+.power_amps{{{cns}}} .mod-control-group {
     bottom: 149px;
     color: #000;
     font-size: 10px;
@@ -77,12 +55,12 @@
     top: 37px;
 }
 
-.mod-head-model-001{{{cns}}} .mod-control-group > div {
+.power_amps{{{cns}}} .mod-control-group > div {
     margin-right: 2px;
 }
 
 /* SWITCH ON/OFF GENERAL */
-.mod-head-model-001{{{cns}}} .mod-switch {
+.power_amps{{{cns}}} .mod-switch {
     cursor: pointer;
     float: left;
     height: 73px;
@@ -90,7 +68,7 @@
     width: 90px;
 }
 
-.mod-head-model-001{{{cns}}} .mod-switch-image {
+.power_amps{{{cns}}} .mod-switch-image {
     background-image: url(/resources/switches/switch-001.png{{{ns}}});
     background-position: -9px 0px;
     background-repeat: no-repeat;
@@ -99,58 +77,38 @@
     width: 73px;
 }
 
-.mod-head-model-001{{{cns}}} .mod-switch-image.on {
+.power_amps{{{cns}}} .mod-switch-image.on {
     background-position: -82px 0px;
 }
 
-.mod-head-model-001{{{cns}}} .mod-switch-image.off {
+.power_amps{{{cns}}} .mod-switch-image.off {
     background-position: -9px 0px;
-}
-
-/* SWITCH ON/OFF - 0550 */
-.mod-head-model-001-0550{{{cns}}} .mod-switch {
-    width: 145px;
-}
-
-/* SWITCH ON/OFF - 0700 */
-.mod-head-model-001-0700{{{cns}}} .mod-switch {
-    width: 160px;
-}
-
-/* SWITCH ON/OFF - 0800 */
-.mod-head-model-001-0800{{{cns}}} .mod-switch {
-    width: 150px;
-}
-
-/* SWITCH ON/OFF - 0950 */
-.mod-head-model-001-0950{{{cns}}} .mod-switch {
-    width: 130px;
 }
 
 
 /* CHICKEN HEAD */
-.mod-head-model-001{{{cns}}} .mod-chicken-head {
+.power_amps{{{cns}}} .mod-chicken-head {
     float: left;
     height: 73px;
     overflow: hidden;
     position: relative;
     text-align: center;
-    width: 80px;
+    width: 70px;
 }
 
-.mod-head-model-001{{{cns}}} .mod-chicken-head .mod-chicken-head-image {
-    background-image: url(/resources/knobs/chicken-head/_strip.png{{{ns}}});
+.power_amps{{{cns}}} .mod-chicken-head .mod-chicken-head-image {
+    background-image: url(/resources/knobs/_sprite.webp{{{ns}}});
     background-position: left 0px;
     background-repeat: no-repeat;
-    background-size: auto 80px;
+    background-size: auto 70px;
     height: 73px;
-    margin-top: 3px;
+    margin-top: 8px;
     position: relative;
-    width: 80px;
+    width: 70px;
     z-index: 2;
 }
 
-.mod-head-model-001{{{cns}}} .mod-chicken-head .mod-chicken-head-title {
+.power_amps{{{cns}}} .mod-chicken-head .mod-chicken-head-title {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 10px;
     font-weight: bold;
@@ -163,21 +121,22 @@
 }
 
 /* ENUMERATED LIST */
-.mod-head-model-001{{{cns}}} .mod-enumerated {
+.power_amps{{{cns}}} .mod-enumerated {
     color: #000;
     display: inline-block;
     margin-top: 30px;
     overflow: hidden;
     position: absolute;
-    right: 3px;
+    right: 30px;
     top: -8px;
-    width: 150px;
+    width: 180px;
 }
 
-.mod-head-model-001{{{cns}}} .mod-enumerated .mod-enumerated-selected {
+.power_amps{{{cns}}} .mod-enumerated .mod-enumerated-selected {
     background: rgba(255,255,255,.85);
     border-radius: 4px;
     box-shadow:inset 1px 1px 10px #000;
+    font-weight: bold;
     font-size: 14px;
     height: 34px;
     line-height: 2.5;
@@ -187,33 +146,34 @@
 }
 
 /* WHEN IS HOVER */
-.mod-head-model-001{{{cns}}} .mod-enumerated:hover .mod-enumerated-selected {
+.power_amps{{{cns}}} .mod-enumerated:hover .mod-enumerated-selected {
     border-radius: 4px 4px 0 0;
 }
 
 /* THE LIST OF OPTIONS */
-.mod-head-model-001{{{cns}}} .mod-enumerated .mod-enumerated-list {
+.power_amps{{{cns}}} .mod-enumerated .mod-enumerated-list {
     background: rgba(255,255,255,.85);
     display: none;
     font-weight: bold;
-    height: 69px;
+    font-size: 14px;
+    height: 159px;
     overflow: auto;
     position: relative;
     width: 242px;
     z-index: 3;
 }
 
-.mod-head-model-001{{{cns}}} .mod-enumerated .mod-enumerated-list > div {
+.power_amps{{{cns}}} .mod-enumerated .mod-enumerated-list > div {
     padding: 3px 9px;
 }
 
-.mod-head-model-001{{{cns}}} .mod-enumerated .mod-enumerated-list > div:hover {
+.power_amps{{{cns}}} .mod-enumerated .mod-enumerated-list > div:hover {
     background: rgba(0,0,0,.35);
     cursor: pointer;
 }
 
 /* SEPARATOR */
-.mod-head-model-001{{{cns}}} .mod-separator {
+.power_amps{{{cns}}} .mod-separator {
     background: #000;
     display: inline-block;
     float: left;

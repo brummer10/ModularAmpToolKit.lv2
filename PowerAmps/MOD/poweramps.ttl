@@ -15,10 +15,14 @@
 @prefix patch:  <http://lv2plug.in/ns/ext/patch#> .
 
 
+<urn:name#me>
+   a foaf:Person ;
+   foaf:name "brummer" .
+
 <urn:brummer:poweramps>
    a lv2:Plugin ,
        lv2:MixerPlugin ;
-   doap:maintainer "brummer" ;
+   doap:maintainer <urn:name#me> ;
    doap:name "PowerAmps" ;
    lv2:project <urn:brummer:poweramps> ;
    lv2:requiredFeature urid:map ;
@@ -26,8 +30,10 @@
    lv2:minorVersion 1 ;
    lv2:microVersion 0 ;
 
+guiext:ui <urn:brummer:poweramps_ui> ;
+
 rdfs:comment """
-Simulation of different Tube Power Amp sections.
+...
 """;
 
 
@@ -83,10 +89,10 @@ Simulation of different Tube Power Amp sections.
       lv2:maximum 5.0 ;
       lv2:portProperty lv2:integer ;
       lv2:portProperty lv2:enumeration ;
-      lv2:scalePoint [rdfs:label "Single ended 6V6GT"; rdf:value 0];
-      lv2:scalePoint [rdfs:label "Single ended EL84"; rdf:value 1];
-      lv2:scalePoint [rdfs:label "Single ended 6V6"; rdf:value 2];
-      lv2:scalePoint [rdfs:label "Push Pull EL84"; rdf:value 3];
-      lv2:scalePoint [rdfs:label "Push Pull EL34"; rdf:value 4];
-      lv2:scalePoint [rdfs:label "Push Pull 6L6"; rdf:value 5];
+      lv2:scalePoint [rdfs:label "Push Pull EL84"; rdf:value 0];
+      lv2:scalePoint [rdfs:label "Push Pull EL34"; rdf:value 1];
+      lv2:scalePoint [rdfs:label "Push Pull 6L6"; rdf:value 2];
+      lv2:scalePoint [rdfs:label "Single ended 6V6GT"; rdf:value 3];
+      lv2:scalePoint [rdfs:label "Single ended EL84"; rdf:value 4];
+      lv2:scalePoint [rdfs:label "Single ended 6V6"; rdf:value 5];
 ] .

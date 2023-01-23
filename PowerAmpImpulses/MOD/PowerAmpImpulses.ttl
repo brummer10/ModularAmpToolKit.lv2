@@ -93,7 +93,7 @@ rdfs:comment """
       lv2:name "tube_style" ;
       lv2:default 0.0 ;
       lv2:minimum 0.0 ;
-      lv2:maximum 9.0 ;
+      lv2:maximum 19.0 ;
       lv2:portProperty lv2:integer ;
       lv2:portProperty lv2:enumeration ;
       lv2:scalePoint [rdfs:label "Blackat Leon"; rdf:value 0];
