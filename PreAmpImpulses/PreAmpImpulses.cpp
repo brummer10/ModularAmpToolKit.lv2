@@ -63,16 +63,17 @@ private:
     float ramp_up_step;
     float ramp_down_step;
     bool bypassed;
-    bool                         doit;
-    std::atomic<bool>            _execute;
+    bool selection_changed;
+    bool doit;
+    std::atomic<bool> _execute;
     gx_resample::BufferResampler resamp;
-    GxSimpleConvolver            preampconv;
+    GxSimpleConvolver preampconv;
     gain::Dsp* plugin1;
     volume::Dsp* plugin2;
 
     // LV2 stuff
-    LV2_URID_Map*                map;
-    LV2_Worker_Schedule*         schedule;
+    LV2_URID_Map* map;
+    LV2_Worker_Schedule* schedule;
 
     // private functions
     inline bool IsPowerOfTwo(uint32_t x) {return (x >= 64) && ((x & (x - 1)) == 0);}
@@ -126,6 +127,7 @@ Xpreampimpulses::Xpreampimpulses() :
     needs_ramp_down(false),
     needs_ramp_up(false),
     bypassed(false),
+    selection_changed(false),
     preampconv(GxSimpleConvolver(resamp)),
     plugin1(gain::plugin()),
     plugin2(volume::plugin())
@@ -241,8 +243,7 @@ void Xpreampimpulses::run_dsp_(uint32_t n_samples)
             needs_ramp_down = true;
             bufsize = cur_bufsize;
             tube_style_ = static_cast<uint32_t>(*(tube_style));
-            _execute.store(true, std::memory_order_release);
-            schedule->schedule_work(schedule->handle,  sizeof(bool), &doit);
+            selection_changed = true;
         }
     }
 
@@ -285,6 +286,11 @@ void Xpreampimpulses::run_dsp_(uint32_t n_samples)
             output0[i] = output0[i] * fade + buf0[i] * (1.0 - fade);
         }
         if (ramp_down <= 0.0) {
+            if (selection_changed) {
+                selection_changed = false;
+                _execute.store(true, std::memory_order_release);
+                schedule->schedule_work(schedule->handle,  sizeof(bool), &doit);
+            }
             // when ramped down, clear buffer from dsp
             needs_ramp_down = false;
             bypassed = true;
