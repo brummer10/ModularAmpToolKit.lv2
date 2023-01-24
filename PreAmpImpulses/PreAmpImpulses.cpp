@@ -241,7 +241,10 @@ void Xpreampimpulses::run_dsp_(uint32_t n_samples)
       ((cur_bufsize != bufsize) || tube_style_ != static_cast<uint32_t>(*(tube_style)))) {
         if (!bypassed) {
             needs_ramp_down = true;
-            bufsize = cur_bufsize;
+            if (cur_bufsize != bufsize) {
+                bufsize = cur_bufsize;
+                _execute.store(true, std::memory_order_release);
+            }
             tube_style_ = static_cast<uint32_t>(*(tube_style));
             selection_changed = true;
         }
