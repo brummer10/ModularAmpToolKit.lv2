@@ -18,10 +18,10 @@
         ] , [
             lv2:index 1 ;
             lv2:symbol "Knob1" ;
-            lv2:name "input" ;
+            lv2:name "Input" ;
         ] , [
             lv2:index 2 ;
             lv2:symbol "Knob2" ;
-            lv2:name "output" ;
+            lv2:name "Output" ;
         ] ;
     ] .

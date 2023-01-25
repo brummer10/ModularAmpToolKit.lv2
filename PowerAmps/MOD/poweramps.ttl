@@ -15,15 +15,14 @@
 @prefix patch:  <http://lv2plug.in/ns/ext/patch#> .
 
 
-<urn:name#me>
-   a foaf:Person ;
-   foaf:name "brummer" .
-
 <urn:brummer:poweramps>
    a lv2:Plugin ,
-       lv2:MixerPlugin ;
-   doap:maintainer <urn:name#me> ;
-   doap:name "PowerAmps" ;
+       lv2:SimulatorPlugin ;
+   doap:maintainer [
+       foaf:name "brummer";
+       foaf:homepage <https://github.com/brummer10/ModularAmpToolKit.lv2>;
+   ] ;
+   doap:name "PowerAmpTubes" ;
    lv2:project <urn:brummer:poweramps> ;
    lv2:requiredFeature urid:map ;
    lv2:optionalFeature lv2:hardRTCapable ;
@@ -33,7 +32,14 @@
 guiext:ui <urn:brummer:poweramps_ui> ;
 
 rdfs:comment """
-...
+PowerAmpTubes, simulation of plain, bare boone, generic Tube Poweramp stacks 
+with different tubes and stacks to select.
+You may want to use the PowerAmpImpulses plugin, or a EQ for tone shaping.
+In- and Out-put controls allow to match the sweep point of the input signal.
+Note that this plugin could easily extend the usual -1.0 <> 1.0 signal range,
+it's up to you to setup a matching gain stacking.
+
+Developed by Brummer
 """;
 
 

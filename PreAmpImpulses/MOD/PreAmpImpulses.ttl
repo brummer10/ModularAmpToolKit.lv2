@@ -17,14 +17,13 @@
 @prefix bufsz: <http://lv2plug.in/ns/ext/buf-size#> .
 
 
-<urn:name#me>
-   a foaf:Person ;
-   foaf:name "brummer" .
-
 <urn:brummer:PreAmpImpulses>
    a lv2:Plugin ,
-       lv2:MixerPlugin ;
-   doap:maintainer <urn:name#me> ;
+       lv2:SimulatorPlugin ;
+   doap:maintainer [
+       foaf:name "brummer";
+       foaf:homepage <https://github.com/brummer10/ModularAmpToolKit.lv2>;
+   ] ;
    doap:name "PreAmpImpulses" ;
    lv2:project <urn:brummer:PreAmpImpulses> ;
    lv2:requiredFeature urid:map ;
@@ -40,7 +39,11 @@
 
 
 rdfs:comment """
-...
+PreAmpImpulses, a set of bar boone Impulse Response Data for tone shaping
+to match specific Pre amplifier stacks.
+In- and Out-put controls allow gain stacking.
+
+Developed by Brummer
 """;
 
 

@@ -7,17 +7,17 @@
     background-position: center center;
     background-repeat: no-repeat;
     font-family: Helvetica,Arial,Sans-serif;
-    height: 146px;
+    height: 210px;
     position: relative;
-    width: 550px;
+    width: 290px;
 }
 
 .pre_amps{{{cns}}} .mod-pedal-input {
-    top: 46px;
+    top: 50px;
 }
 
 .pre_amps{{{cns}}} .mod-pedal-output {
-    top: 46px;
+    top: 50px;
 }
 
 /* THE AUTHOR */
@@ -36,7 +36,8 @@
     top: 6px;
     color: #444;
     font-size: 18px;
-    left: 370px;
+    left: 90px;
+    top: 20px;
     line-height: 1;
     margin: 0;
     position: absolute;
@@ -52,11 +53,34 @@
     left: 34px;
     position: absolute;
     right: 34px;
-    top: 37px;
+    top: 47px;
 }
 
 .pre_amps{{{cns}}} .mod-control-group > div {
     margin-right: 2px;
+}
+
+/* = LIGHT ON/OFF
+================================================ */
+.pre_amps{{{cns}}} .my-mod-light {
+    background-image: url(/resources/switches/LED_Red.webP{{{ns}}});
+    background-position: left 0px;
+    background-repeat: no-repeat;
+    background-size: auto 16px;
+    background-repeat: no-repeat;
+    height:16px;
+    left:55px;
+    position:absolute;
+    top:22px;
+    width:16px;
+}
+
+.pre_amps{{{cns}}} .my-mod-light.off {
+    background-position: 0px 0px;
+}
+
+.pre_amps{{{cns}}} .my-mod-light.on {
+    background-position: -16px 0px;
 }
 
 /* SWITCH ON/OFF GENERAL */
@@ -65,24 +89,25 @@
     float: left;
     height: 73px;
     position: relative;
-    width: 90px;
-}
-
-.pre_amps{{{cns}}} .mod-switch-image {
-    background-image: url(/resources/switches/switch-001.png{{{ns}}});
-    background-position: -9px 0px;
-    background-repeat: no-repeat;
-    background-size: auto 73px;
-    height: 73px;
+    top: 10px;
     width: 73px;
 }
 
+.pre_amps{{{cns}}} .mod-switch-image {
+    background-image: url(/resources/switches/PowerSwitch.webp{{{ns}}});
+    background-position: -9px 0px;
+    background-repeat: no-repeat;
+    background-size: auto 60px;
+    height: 60px;
+    width: 60px;
+}
+
 .pre_amps{{{cns}}} .mod-switch-image.on {
-    background-position: -82px 0px;
+    background-position: -60px 0px;
 }
 
 .pre_amps{{{cns}}} .mod-switch-image.off {
-    background-position: -9px 0px;
+    background-position: 0px 0px;
 }
 
 
@@ -127,8 +152,8 @@
     margin-top: 30px;
     overflow: hidden;
     position: absolute;
-    right: 30px;
-    top: -8px;
+    left: 30px;
+    top: 70px;
     width: 180px;
 }
 
@@ -156,7 +181,7 @@
     display: none;
     font-weight: bold;
     font-size: 14px;
-    height: 80px;
+    height: 100px;
     overflow: auto;
     position: relative;
     width: 242px;

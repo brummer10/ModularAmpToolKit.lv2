@@ -9,7 +9,7 @@
         modgui:screenshot <modgui/screenshot-preamps.png> ;
         modgui:thumbnail <modgui/thumbnail-preamps.png> ;
         modgui:brand "brummer" ;
-        modgui:label "PreAmps" ;
+        modgui:label "PreAmpTubes" ;
         modgui:model "pre-amps" ;
         modgui:port [
             lv2:index 0 ;
@@ -18,10 +18,10 @@
         ] , [
             lv2:index 1 ;
             lv2:symbol "GAIN" ;
-            lv2:name "gain" ;
+            lv2:name "Input" ;
         ] , [
             lv2:index 2 ;
             lv2:symbol "VOLUME" ;
-            lv2:name "volume" ;
+            lv2:name "Output" ;
         ] ;
     ] .

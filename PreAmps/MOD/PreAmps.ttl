@@ -15,24 +15,30 @@
 @prefix patch:  <http://lv2plug.in/ns/ext/patch#> .
 
 
-<urn:name#me>
-   a foaf:Person ;
-   foaf:name "brummer" .
 
 <urn:brummer:PreAmps>
    a lv2:Plugin ,
-       lv2:MixerPlugin ;
-   doap:maintainer <urn:name#me> ;
-   doap:name "PreAmps" ;
+       lv2:SimulatorPlugin ;
+   doap:maintainer [
+       foaf:name "brummer";
+       foaf:homepage <https://github.com/brummer10/ModularAmpToolKit.lv2>;
+   ] ;
+   doap:name "PreAmpTubes" ;
    lv2:project <urn:brummer:PreAmps> ;
    lv2:requiredFeature urid:map ;
    lv2:optionalFeature lv2:hardRTCapable ;
    lv2:minorVersion 1 ;
-   lv2:microVersion 0 ;
+   lv2:microVersion 1 ;
 
 
 rdfs:comment """
-...
+PreAmpTubes, simulation of a plain, bare boone, generic Tube Preamp stack with different tubes to select.
+In- and Out-put controls allow to match the sweep point of the input signal.
+You may want to use the PreAmpImpulses plugin, or a EQ for tone shaping.
+Note that this plugin could easily extend the usual -1.0 <> 1.0 signal range,
+it's up to you to setup a matching gain stacking.
+
+Developed by Brummer
 """;
 
 
