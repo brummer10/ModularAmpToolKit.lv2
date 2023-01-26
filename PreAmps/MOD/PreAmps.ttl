@@ -32,7 +32,7 @@
 
 
 rdfs:comment """
-PreAmpTubes, simulation of a plain, bare boone, generic Tube Preamp stack with different tubes to select.
+PreAmpTubes, simulation of a plain, bare bone, generic Tube Preamp stack with different tubes to select.
 In- and Out-put controls allow to match the sweep point of the input signal.
 You may want to use the PreAmpImpulses plugin, or a EQ for tone shaping.
 Note that this plugin could easily extend the usual -1.0 <> 1.0 signal range,

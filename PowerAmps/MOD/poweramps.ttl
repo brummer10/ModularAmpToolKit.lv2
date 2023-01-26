@@ -32,7 +32,7 @@
 guiext:ui <urn:brummer:poweramps_ui> ;
 
 rdfs:comment """
-PowerAmpTubes, simulation of plain, bare boone, generic Tube Poweramp stacks 
+PowerAmpTubes, simulation of plain, bare bone, generic Tube Poweramp stacks
 with different tubes and stacks to select.
 You may want to use the PowerAmpImpulses plugin, or a EQ for tone shaping.
 In- and Out-put controls allow to match the sweep point of the input signal.

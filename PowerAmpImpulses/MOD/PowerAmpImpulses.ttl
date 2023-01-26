@@ -39,7 +39,7 @@
 
 
 rdfs:comment """
-PowerAmpImpulses, a set of bar boone Impulse Response Data for tone shaping
+PowerAmpImpulses, a set of bar bone Impulse Response Data for tone shaping
 to match specific Power amplifier stacks.
 In- and Out-put controls allow gain stacking.
 

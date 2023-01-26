@@ -39,7 +39,7 @@
 
 
 rdfs:comment """
-PreAmpImpulses, a set of bar boone Impulse Response Data for tone shaping
+PreAmpImpulses, a set of bar bone Impulse Response Data for tone shaping
 to match specific Pre amplifier stacks.
 In- and Out-put controls allow gain stacking.
 

@@ -181,7 +181,7 @@
     display: none;
     font-weight: bold;
     font-size: 14px;
-    height: 100px;
+    max-height: 180px;
     overflow: auto;
     position: relative;
     width: 242px;
