@@ -101,6 +101,8 @@ Xpoweramps::Xpoweramps() :
     output0(NULL),
     bypass(NULL),
     bypass_(2),
+    sel(NULL),
+    sel_(0),
     plugin0(champ::plugin()),
     plugin1(epiphone::plugin()),
     plugin2(orangedarkterror::plugin()),
