@@ -45,7 +45,7 @@
 	-Wl,-Bdynamic `pkg-config --cflags --libs cairo x11` 
 	LDFLAGS += -fvisibility=hidden -shared -lm -pthread -lpthread -shared -lm -lfftw3f -fPIC \
 	-Wl,-z,noexecstack -Wl,--no-undefined -Wl,--gc-sections
-	CXXFLAGS += -I. -I./DSP -I./DSP/amp_ir -I./DSP/zita-convolver -I./DSP/zita-resampler-1.1.0 \
+	CXXFLAGS += -std=c++11 -I. -I./DSP -I./DSP/amp_ir -I./DSP/zita-convolver -I./DSP/zita-resampler-1.1.0 \
 	-I./DSP/zita-resampler-1.1.0/zita-resampler -fPIC -DPIC -g -DDebug -Wall -funroll-loops \
 	-fomit-frame-pointer -fstrength-reduce -fstack-protector -fvisibility=hidden \
 	-fdata-sections -Wl,--gc-sections -Wl,--exclude-libs,ALL

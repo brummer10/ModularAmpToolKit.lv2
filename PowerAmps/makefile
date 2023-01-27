@@ -45,7 +45,7 @@
 	-Wl,-Bdynamic `pkg-config --cflags --libs cairo x11` 
 	LDFLAGS += -fvisibility=hidden -shared -lm -fPIC \
 	-Wl,-z,noexecstack -Wl,--no-undefined -Wl,--gc-sections
-	CXXFLAGS += -I. -I./dsp -fPIC -DPIC -O2 -Wall -funroll-loops \
+	CXXFLAGS += -std=c++11 -I. -I./dsp -fPIC -DPIC -O2 -Wall -funroll-loops \
 	-fomit-frame-pointer -fstrength-reduce -fstack-protector -fvisibility=hidden \
 	-fdata-sections -Wl,--gc-sections -Wl,--exclude-libs,ALL
 	SLP_LDFLAGS += -fvisibility=hidden -Wl,-Bstatic `pkg-config --cflags --libs xputty` \
