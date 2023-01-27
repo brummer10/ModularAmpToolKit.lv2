@@ -29,8 +29,6 @@
    lv2:minorVersion 1 ;
    lv2:microVersion 1 ;
 
-guiext:ui <urn:brummer:poweramps_ui> ;
-
 rdfs:comment """
 PowerAmpTubes, simulation of plain, bare bone, generic Tube Poweramp stacks
 with different tubes and stacks to select.
