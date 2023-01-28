@@ -694,7 +694,8 @@ void Convlevel::cleanup (void)
     fftwf_destroy_plan (_plan_c2r);
     free (_time_data);
     free (_prep_data);
-    free (_freq_data);
+    fftwf_free (_freq_data);
+    fftwf_cleanup();
     _plan_r2c = 0;
     _plan_c2r = 0;
     _time_data = 0;
