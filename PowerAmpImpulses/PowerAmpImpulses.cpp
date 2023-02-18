@@ -142,6 +142,7 @@ Xpowerampimpulses::~Xpowerampimpulses() {
     preampconv.cleanup();
     plugin1->del_instance(plugin1);
     plugin2->del_instance(plugin2);
+    delete [] buffer;
 };
 
 ///////////////////////// PRIVATE CLASS  FUNCTIONS /////////////////////
