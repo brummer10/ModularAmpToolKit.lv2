@@ -97,21 +97,22 @@ void plugin_create_controller_widgets(X11_UI *ui, const char * plugin_uri, float
     widget_get_png(ui->widget[1], LDVAR(knob_sprite_caccaebi_png));
     set_adjustment(ui->widget[1]->adj, 0.0, 0.0, -20.0, 20.0, 0.1, CL_CONTINUOS);
 
-    ui->widget[2] = add_lv2_knob (ui->widget[2], ui->win, 4, "OUTPUT", ui, 210,  60, 60 * scale, 80 * scale);
+    ui->widget[2] = add_lv2_knob (ui->widget[2], ui->win, 4, "TONE", ui, 210,  60, 60 * scale, 80 * scale);
     widget_get_png(ui->widget[2], LDVAR(knob_sprite_caccaebi_png));
-    set_adjustment(ui->widget[2]->adj, 0.0, 0.0, -20.0, 20.0, 0.1, CL_CONTINUOS);
+    set_adjustment(ui->widget[2]->adj, 0.5, 0.5, 0.0, 1.0, 0.01, CL_CONTINUOS);
 
     ui->widget[3] = add_lv2_combobox (ui->widget[3], ui->win, 5, "", ui, 309,  81, 150 * scale, 30 * scale);
     combobox_add_entry (ui->widget[3], "AC30 Style");
     combobox_add_entry (ui->widget[3], "Bassman Style");
     combobox_add_entry (ui->widget[3], "Tube Style");
+    combobox_add_entry (ui->widget[3], "Fender Style");
     combobox_add_entry (ui->widget[3], "JCM800 Style");
     combobox_add_entry (ui->widget[3], "JTM45 Style");
     combobox_add_entry (ui->widget[3], "Mesa Boogie Style");
     combobox_add_entry (ui->widget[3], "Boutique Style");
     combobox_add_entry (ui->widget[3], "Ampeg Style");
     combobox_add_entry (ui->widget[3], "Rectifier Style");
-    set_adjustment(ui->widget[3]->adj, 0.0, 0.0, 0.0, 8.0, 1.0, CL_ENUM);
+    set_adjustment(ui->widget[3]->adj, 0.0, 0.0, 0.0, 9.0, 1.0, CL_ENUM);
 
 }
 

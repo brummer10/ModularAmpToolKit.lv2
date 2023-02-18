@@ -22,6 +22,6 @@
         ] , [
             lv2:index 2 ;
             lv2:symbol "Knob2" ;
-            lv2:name "Output" ;
+            lv2:name "tone" ;
         ] ;
     ] .

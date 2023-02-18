@@ -97,9 +97,9 @@ void plugin_create_controller_widgets(X11_UI *ui, const char * plugin_uri, float
     widget_get_png(ui->widget[1], LDVAR(knob_sprite_caccaebi_png));
     set_adjustment(ui->widget[1]->adj, 0.0, 0.0, -20.0, 20.0, 0.1, CL_CONTINUOS);
 
-    ui->widget[2] = add_lv2_knob (ui->widget[2], ui->win, 4, "OUTPUT", ui, 210,  60, 60 * scale, 80 * scale);
+    ui->widget[2] = add_lv2_knob (ui->widget[2], ui->win, 4, "TONE", ui, 210,  60, 60 * scale, 80 * scale);
     widget_get_png(ui->widget[2], LDVAR(knob_sprite_caccaebi_png));
-    set_adjustment(ui->widget[2]->adj, 0.0, 0.0, -20.0, 20.0, 0.1, CL_CONTINUOS);
+    set_adjustment(ui->widget[2]->adj, 0.5, 0.5, 0.0, 1.0, 0.01, CL_CONTINUOS);
 
     ui->widget[3] = add_lv2_combobox (ui->widget[3], ui->win, 5, "", ui, 309,  81, 150 * scale, 30 * scale);
     combobox_add_entry (ui->widget[3], "Blackat Leon");

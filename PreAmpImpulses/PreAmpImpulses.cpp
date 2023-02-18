@@ -35,7 +35,7 @@ typedef int PortIndex;
 #include "gx_convolver.h"
 #include "preamp_table.h"
 #include "gain.cc"
-#include "volume.cc"
+#include "tone.cc"
 
 ////////////////////////////// PLUG-IN CLASS ///////////////////////////
 
@@ -52,6 +52,7 @@ private:
     float bypass_;
     float* tube_style;
     float tube_style_;
+    float* buffer;
     uint32_t bufsize;
     uint32_t cur_bufsize;
     uint32_t s_rate;
@@ -69,13 +70,14 @@ private:
     gx_resample::BufferResampler resamp;
     GxSimpleConvolver preampconv;
     gain::Dsp* plugin1;
-    volume::Dsp* plugin2;
+    tone::Dsp* plugin2;
 
     // LV2 stuff
     LV2_URID_Map* map;
     LV2_Worker_Schedule* schedule;
 
     // private functions
+    inline float* adjust(float *buf, int32_t size, int set);
     inline bool IsPowerOfTwo(uint32_t x) {return (x >= 64) && ((x & (x - 1)) == 0);}
     inline void run_dsp_(uint32_t n_samples);
     inline void connect_(uint32_t port,void* data);
@@ -122,6 +124,7 @@ Xpreampimpulses::Xpreampimpulses() :
     bypass_(2),
     tube_style(NULL),
     tube_style_(0),
+    buffer(NULL),
     bufsize(0),
     cur_bufsize(0),
     needs_ramp_down(false),
@@ -130,7 +133,7 @@ Xpreampimpulses::Xpreampimpulses() :
     selection_changed(false),
     preampconv(GxSimpleConvolver(resamp)),
     plugin1(gain::plugin()),
-    plugin2(volume::plugin())
+    plugin2(tone::plugin())
  {};
 
 // destructor
@@ -139,6 +142,7 @@ Xpreampimpulses::~Xpreampimpulses() {
     preampconv.cleanup();
     plugin1->del_instance(plugin1);
     plugin2->del_instance(plugin2);
+    delete [] buffer;
 };
 
 ///////////////////////// PRIVATE CLASS  FUNCTIONS /////////////////////
@@ -159,7 +163,7 @@ void Xpreampimpulses::init_dsp_(uint32_t rate, uint32_t bufsize_)
         PreDesc& pre = *getPreEntry(static_cast<uint32_t>(tube_style_)).data;
         preampconv.pre_count = pre.ir_count;
         preampconv.pre_sr = pre.ir_sr;
-        preampconv.pre_data = pre.ir_data;
+        preampconv.pre_data = adjust(pre.ir_data, pre.ir_count, static_cast<int>(tube_style_));
         preampconv.set_samplerate(rate);
         preampconv.set_buffersize(bufsize);
         preampconv.configure(preampconv.pre_count, preampconv.pre_data, preampconv.pre_sr);
@@ -208,6 +212,31 @@ void Xpreampimpulses::deactivate_f()
     // delete the internal DSP mem
 }
 
+float* Xpreampimpulses::adjust(float *buf, int32_t size, int set) {
+    delete [] buffer;
+    buffer = NULL;
+    buffer = new float[size];
+    float adj = 1.5f;
+    switch (set) {
+        case 0:
+            adj = 1.0f;
+            break;
+        case 2:
+            adj = 1.1f;
+            break;
+        default:
+            break;
+    }
+    float imax = 0.0f;
+    for (int i = 0; i<size;++i) {
+        imax = max(imax,std::fabs(buf[i]));
+    }
+    for (int i = 0; i<size;++i) {
+        buffer[i] = buf[i] * (adj - imax);
+    }
+    return buffer;
+}
+
 void Xpreampimpulses::do_work_mono()
 {
     if (preampconv.is_runnable()) {
@@ -220,7 +249,7 @@ void Xpreampimpulses::do_work_mono()
     PreDesc& pre = *getPreEntry(static_cast<uint32_t>(tube_style_)).data;
     preampconv.pre_count = pre.ir_count;
     preampconv.pre_sr = pre.ir_sr;
-    preampconv.pre_data = pre.ir_data;
+    preampconv.pre_data = adjust(pre.ir_data, pre.ir_count, static_cast<int>(tube_style_));
     preampconv.set_samplerate(s_rate);
     preampconv.set_buffersize(bufsize);
     preampconv.configure(preampconv.pre_count, preampconv.pre_data, preampconv.pre_sr);

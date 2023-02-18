@@ -96,16 +96,17 @@ Developed by Brummer
       lv2:name "tube_style" ;
       lv2:default 0.0 ;
       lv2:minimum 0.0 ;
-      lv2:maximum 8.0 ;
+      lv2:maximum 9.0 ;
       lv2:portProperty lv2:integer ;
       lv2:portProperty lv2:enumeration ;
       lv2:scalePoint [rdfs:label "AC30 Style"; rdf:value 0];
       lv2:scalePoint [rdfs:label "Bassman Style"; rdf:value 1];
       lv2:scalePoint [rdfs:label "Tube Style"; rdf:value 2];
-      lv2:scalePoint [rdfs:label "JCM800 Style"; rdf:value 3];
-      lv2:scalePoint [rdfs:label "JTM45 Style"; rdf:value 4];
-      lv2:scalePoint [rdfs:label "Mesa Boogie Style"; rdf:value 5];
-      lv2:scalePoint [rdfs:label "Boutique Style"; rdf:value 6];
-      lv2:scalePoint [rdfs:label "Ampeg Style"; rdf:value 7];
-      lv2:scalePoint [rdfs:label "Rectifier Style"; rdf:value 8];
+      lv2:scalePoint [rdfs:label "Fender Style"; rdf:value 3];
+      lv2:scalePoint [rdfs:label "JCM800 Style"; rdf:value 4];
+      lv2:scalePoint [rdfs:label "JTM45 Style"; rdf:value 5];
+      lv2:scalePoint [rdfs:label "Mesa Boogie Style"; rdf:value 6];
+      lv2:scalePoint [rdfs:label "Boutique Style"; rdf:value 7];
+      lv2:scalePoint [rdfs:label "Ampeg Style"; rdf:value 8];
+      lv2:scalePoint [rdfs:label "Rectifier Style"; rdf:value 9];
 ] .
